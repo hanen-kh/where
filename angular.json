@@ -32,12 +32,52 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/custom",
+              "src/assets/vendor"
+
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/vendor/animate.css-master/animate.min.css",
+              "src/assets/vendor/loadscreen/css/spinkit.css",
+              "src/assets/vendor/fontawesome/css/fontawesome-all.min.css",
+              "src/assets/custom/css/fables-icons.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/bootstrap/css/bootstrap-4-navbar.css",
+              "src/assets/vendor/portfolio-filter-gallery/portfolio-filter-gallery.css",
+              "src/assets/vendor/fancybox-master/jquery.fancybox.min.css",
+              "src/assets/vendor/range-slider/range-slider.css",
+              "src/assets/vendor/owlcarousel/owl.carousel.min.css",
+              "src/assets/vendor/owlcarousel/owl.theme.default.min.css",
+              "src/assets/custom/css/custom.css",
+              "src/assets/custom/css/custom-responsive.css",
+              "src/assets/vendor/bootstrap/css/bootstrap-4-navbar.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css"
+           
             ],
-            "scripts": []
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+          "src/assets/vendor/bootstrap/js/bootstrap-4-navbar.js",
+          "src/assets/custom/js/custom.js",
+          "src/assets/vendor/jquery/jquery-3.3.1.min.js",
+"src/assets/vendor/loadscreen/js/ju-loading-screen.js",
+"src/assets/vendor/jquery-circle-progress/circle-progress.min.js",
+"src/assets/vendor/popper/popper.min.js",
+"src/assets/vendor/jQuery.countdown-master/jquery.countdown.min.js",
+"src/assets/vendor/timeline/jquery.timelify.js",
+"src/assets/vendor/bootstrap/js/bootstrap.min.js",
+"src/assets/vendor/bootstrap/js/bootstrap-4-navbar.js",
+"src/assets/vendor/WOW-master/dist/wow.min.js",
+"src/assets/vendor/owlcarousel/owl.carousel.min.js",
+"src/assets/custom/js/jquery-data-to.js",
+"src/assets/vendor/jquery-circle-progress/circle.js",
+"src/assets/vendor/portfolio-filter-gallery/jquery.isotope.min.js",
+"src/assets/vendor/portfolio-filter-gallery/portfolio-filter-gallery.js",
+"/src/assets/vendor/fancybox-master/jquery.fancybox.min.js"
+
+
+      
+      ]
           },
           "configurations": {
             "production": {
