@@ -1,0 +1,11 @@
+package where.enitites;
+
+import jakarta.persistence.Entity;
+
+import java.util.Date;
+
+@Entity
+public class candidate extends User {
+    private Date dateOfBirth;
+
+}

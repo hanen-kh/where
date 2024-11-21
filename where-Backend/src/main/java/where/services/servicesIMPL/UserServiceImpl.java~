@@ -1,0 +1,76 @@
+package where.services.servicesIMPL;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import where.enitites.User;
+import where.enitites.Validation;
+import where.repositories.UserRepository;
+import where.repositories.ValidationRepository;
+import where.services.UserService;
+import where.services.ValidationService;
+
+import java.time.Instant;
+import java.util.Map;
+
+@Service
+public class UserServiceImpl implements UserService, UserDetailsService {
+    private UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
+    private ValidationService validationService;
+    private ValidationRepository validationRepository;
+    @Override
+    public User loadUserByUsername(String username) throws UsernameNotFoundException {
+        return this.userRepository
+                .findByEmail(username)
+                .orElseThrow(() -> new  UsernameNotFoundException("Aucun utilisateur ne corespond à cet identifiant"));
+    }
+
+    @Override
+    public void registerUser(User user) {
+        // Ensure unique email
+        if (this.loadUserByUsername(user.getEmail()) != null) {
+            throw new IllegalArgumentException("Email already in use.");
+        }
+
+        // Encode password, set inactive status
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setActif(false);
+
+        userRepository.save(user);
+
+        // Generate and send activation code
+        validationService.codeActivation(user.getEmail());
+    }
+
+    @Override
+    public void validateCode(Map<String, String> parametres) {
+        // Extract parameters
+        String code = parametres.get("code");
+
+
+        // Validate the activation code
+        Validation validation = validationRepository.findByCode(code);
+
+        // Retrieve the user from the Validation entity
+        User utilisateur = validation.getUser();
+        if (utilisateur == null) {
+            userRepository.delete(utilisateur); // Suppression de l'utilisateur
+            throw new RuntimeException("Utilisateur inconnu.");
+        }
+
+        if (validation == null) {
+            throw new RuntimeException("Code de validation invalide.");
+        }
+        if (Instant.now().isAfter(validation.getExpiration())) {
+            userRepository.delete(utilisateur); // Suppression de l'utilisateur
+            throw new RuntimeException("Votre code de validation a expiré.");
+        }
+
+
+
+
+    }
+
+}
