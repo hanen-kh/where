@@ -136,7 +136,7 @@
         border-radius: 15px;
         border-color: #000000;
         width: 300px; /* Ajuster la largeur du formulaire */
-        height: 390px;
+        height: 370px;
         background: rgba(170, 168, 168, 0.2); /* Fond blanc avec 20% d'opacité */
         
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optionnel : ajoute un léger ombrage */
@@ -209,8 +209,7 @@
       .form-left img {
         margin-top: 0px;
         width: 150px;
-        border-radius: 10px;
-        justify-self: center;
+        margin-left: 55px;
       }
       ::placeholder{
         color: #fcfcfc;
@@ -226,7 +225,7 @@
         overflow: hidden;
         white-space: nowrap;
         animation: typing 3.5s steps(16);
-        margin-left: 27px;
+        margin-left: 50px;
       }
       
       .typewriter ::after{
@@ -253,7 +252,7 @@
       }
       
       .best {
-        margin-left: 27px;
+        margin-left: 50px;
       }
       </style>
       
@@ -283,11 +282,11 @@
             <input type="password"  style="color: #fff;" name="password" placeholder="Password" required>
       
             <!-- Submit button -->
-            <button type="submit">Login</button>
+            <button type="submit" (click)="goDashboard()" >Login</button>
             
             <div class="additional-links">
-              <a href="#" class="forgot-password">Forgot Password?</a>
-              <a href="#" class="sign-up">Sign Up</a>
+              <a [routerLink]="'/forgotPassword'" style="font-size: 16px;">Forgot Password?</a>
+              <a routerLink='/signupRecruiter' style="font-size: 16px;">Sign Up</a>
           </div>
             
           </form>

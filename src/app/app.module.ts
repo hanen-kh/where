@@ -6,25 +6,27 @@ import { AppComponent } from './app.component';
 import {NgOptimizedImage} from "@angular/common";
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-import { BackgroundComponent } from './background/background.component';
 import { SigninrecruiterComponent } from './signinrecruiter/signinrecruiter.component';
 import { SignincandidateComponent } from './signincandidate/signincandidate.component';
 import { SignuprecruiterComponent } from './signuprecruiter/signuprecruiter.component';
 import { SignupcandidateComponent } from './signupcandidate/signupcandidate.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { DashboardrecruiterComponent } from './dashboardrecruiter/dashboardrecruiter.component';
+import { DashboardcandidateComponent } from './dashboardcandidate/dashboardcandidate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    BackgroundComponent,
+    
     SigninrecruiterComponent,
     SignincandidateComponent,
     SignuprecruiterComponent,
     SignupcandidateComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    DashboardrecruiterComponent,
+    DashboardcandidateComponent
   ],
     imports: [
         BrowserModule,

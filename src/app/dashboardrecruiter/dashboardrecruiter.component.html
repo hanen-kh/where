@@ -1,0 +1,249 @@
+<style>
+    /* Réinitialisation générale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f4f4f9;
+}
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #1e3a8a; /* Bleu foncé */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.sidebar .logo {
+  text-align: center;
+}
+.sidebar .logo img {
+  width: 80px;
+  border-radius: 50%;
+}
+.sidebar .logo h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.sidebar-nav ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.sidebar-nav ul li {
+  margin-bottom: 15px;
+}
+.sidebar-nav ul li a {
+  text-decoration: none;
+  color: #d1d5db; /* Gris clair */
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.sidebar-nav ul li a:hover {
+  background: #2563eb; /* Bleu clair */
+  color: #fff;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.dashboard-header .user-info {
+  display: flex;
+  align-items: center;
+}
+.dashboard-header .user-info .user-name {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.dashboard-header .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  margin-bottom: 30px;
+}
+.dashboard-section h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.stats {
+  display: flex;
+  gap: 20px;
+}
+.stat-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+.stat-card h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.stat-card p {
+  font-size: 16px;
+  color: #6b7280; /* Gris moyen */
+}
+
+/* Table */
+.table-container {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb; /* Gris clair */
+}
+table th {
+  background: #f9fafb; /* Blanc cassé */
+  font-weight: 600;
+}
+table td button {
+  padding: 5px 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+table td button:hover {
+  background: #1e40af; /* Bleu plus foncé */
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruiter Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Ajouter le CSS ici */
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="logo-placeholder.png" alt="Logo" />
+        <h2>Recruiter Portal</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#candidates">Candidates</a></li>
+          <li><a href="#job-posts">Job Posts</a></li>
+          <li><a href="#messages">Messages</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <h1>Welcome, Recruiter!</h1>
+        <div class="user-info">
+          <span class="user-name">John Doe</span>
+          <img src="user-avatar-placeholder.jpg" alt="User Avatar" />
+        </div>
+      </header>
+
+      <section class="dashboard-section" id="overview">
+        <h2>Dashboard Overview</h2>
+        <div class="stats">
+          <div class="stat-card">
+            <h3>50</h3>
+            <p>New Applications</p>
+          </div>
+          <div class="stat-card">
+            <h3>12</h3>
+            <p>Open Positions</p>
+          </div>
+          <div class="stat-card">
+            <h3>8</h3>
+            <p>Interviews Scheduled</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="candidates">
+        <h2>Top Candidates</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jane Smith</td>
+                <td>Software Engineer</td>
+                <td>Pending</td>
+                <td><button>View</button></td>
+              </tr>
+              <tr>
+                <td>Mark Brown</td>
+                <td>Data Analyst</td>
+                <td>Interviewed</td>
+                <td><button>View</button></td>
+              </tr>
+              <tr>
+                <td>Emily Johnson</td>
+                <td>Project Manager</td>
+                <td>Shortlisted</td>
+                <td><button>View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
